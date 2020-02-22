@@ -10,36 +10,44 @@
   </head>
   <body>
 
-    <ul class="nav">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 
-      <li class="nav-link">
-        <a href="{{url_for('core.index')}}">Home</a>
-      </li>
-      <li class="nav-link">
-        <a href="{{url_for('core.info')}}">About</a>
-      </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{{url_for('core.index')}}">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{{url_for('core.info')}}">About</a>
+        </li>
 
-      {% if current_user.is_authenticated %}
-      <li class="nav-link">
-        <a href="{{url_for('users.logout')}}">Log Out</a>
-      </li>
-      <li class="nav-link">
-        <a href="{{url_for('users.account')}}">Account</a>
-      </li>
-      <li class="nav-link">
-        <a href="{{url_for('blog_posts.create_post')}}">Create Post</a>
-      </li>
-      {% else %}
-      <li class="nav-link">
-        <a href="{{url_for('users.login')}}">Log In</a>
-      </li>
-      <li class="nav-link">
-        <a href="{{url_for('users.register')}}">Register</a>
-      </li>
+        {% if current_user.is_authenticated %}
+        <li class="nav-item active">
+          <a class="nav-link" href="{{url_for('users.logout')}}">Log Out</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{{url_for('users.account')}}">Account</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{{url_for('blog_posts.create_post')}}">Create Post</a>
+        </li>
+        {% else %}
+        <li class="nav-item active">
+          <a class="nav-link" href="{{url_for('users.login')}}">Log In</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{{url_for('users.register')}}">Register</a>
+        </li>
 
-      {% endif %}
+        {% endif %}
 
-    </ul>
+      </ul>
+    </nav>
+
+
   <div class="container">
     {% block content %}
 

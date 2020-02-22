@@ -4,8 +4,14 @@
 
 <form  method="POST">
   {{form.hidden_tag()}}
-  {{form.email.label}}{{form.email}}<br>
-  {{form.password.label}}{{form.password}}<br>
+  <div class="form-group">
+    {{form.email.label(class='form-control-label')}}
+    {{form.email(class='form-control form-control-dark')}}<br>
+  </div>
+  <div class="form-group">
+    {{form.password.label(class='form-control-label')}}
+    {{form.password(class='form-control form-control-dark')}}<br>
+  </div>
   {{form.submit()}}
 </form>
 
