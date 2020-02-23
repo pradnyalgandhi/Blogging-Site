@@ -4,15 +4,18 @@
 
 <form  method="POST">
   {{form.hidden_tag()}}
-  <div class="form-group">
+  <div class="container">
     {{form.email.label(class='form-control-label')}}
     {{form.email(class='form-control form-control-dark')}}<br>
   </div>
-  <div class="form-group">
+  <div class="container">
     {{form.password.label(class='form-control-label')}}
     {{form.password(class='form-control form-control-dark')}}<br>
   </div>
-  {{form.submit()}}
+  <div class="container">
+    {{form.submit()}}
+  </div>
+
 </form>
 
 {% endblock %}
