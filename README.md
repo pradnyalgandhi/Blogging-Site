@@ -2,7 +2,7 @@
 Flask is a Python Framework used to make web applications.
 We have used Flask Framework to create a blogging website.
 
-!(https://github.com/pradnyalgandhi/Blogging-Site/blob/master/myproject/static/profile_pics/Picture1.png "Blogging Site")
+![alt txt](https://github.com/pradnyalgandhi/Blogging-Site/blob/master/myproject/static/profile_pics/Picture1.png "Blogging Site")
 
 ## Installation
 
@@ -15,7 +15,7 @@ We have used Flask Framework to create a blogging website.
 ```bash
 conda create --name myenv
 ```
-!(https://github.com/pradnyalgandhi/Blogging-Site/blob/master/myproject/static/profile_pics/Picture2.png)
+![alt txt](https://github.com/pradnyalgandhi/Blogging-Site/blob/master/myproject/static/profile_pics/Picture2.png)
 3. Activate your virtual Environment
 ```bash
 activate my env
