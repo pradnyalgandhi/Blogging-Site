@@ -2,6 +2,14 @@
 Flask is a Python Framework used to make web applications.
 We have used Flask Framework to create a blogging website.
 
+>Features
+- User Authorisation: Registering a User using Flask-Login Package
+- Database connectivity using SQLAlchemy
+- Password hashing using Werkzeug
+- Authorised user can only Create, Update and Delete his Blogs
+- Other Users can only view other blogs but cannot edit it.
+- Home page displays all the Blogs, their authors and the content.
+
 ![alt txt](https://github.com/pradnyalgandhi/Blogging-Site/blob/master/myproject/static/profile_pics/Picture1.png "Blogging Site")
 
 ## Installation
@@ -16,6 +24,7 @@ We have used Flask Framework to create a blogging website.
 conda create --name myenv
 ```
 ![alt txt](https://github.com/pradnyalgandhi/Blogging-Site/blob/master/myproject/static/profile_pics/Picture2.png)
+
 3. Activate your virtual Environment
 ```bash
 activate my env
