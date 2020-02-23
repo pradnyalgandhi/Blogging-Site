@@ -14,7 +14,7 @@ We have used Flask Framework to create a blogging website.
 
 ## Installation
 
- 1.Install Python and Anaconda in your Computer.
+1. Install Python and Anaconda in your Computer.
 
 [Python](https://www.python.org/downloads/)
 [Anaconda](https://www.anaconda.com/distribution/)
