@@ -3,17 +3,20 @@
 {% block content %}
 
 <div class="jumbotron">
-  <h1>The Main Page</h1>
+  <h1>Welcome to the Blogging Site</h1><br>
+  <h3>Here are some of our blog posts by Users!</h3>
 
 </div>
+
 
 <div class="container">
 
   {% for post in blog_posts.items %}
     <div class="card">
+      <h5 class="card-header">Recent</h5>
       <div class="card-body">
         <h2><a class="card-title" href="  {{ url_for('blog_posts.blog_post', blog_post_id=post.id) }}">{{ post.title }}</a></h2>
-        <a href="{{url_for('users.user_posts',username =post.author.username )}}">Written by: {{post.author.usernmae}}</a>
+        <a href="{{url_for('users.user_posts',username =post.author.username )}}">Written by: {{post.author.username}}</a>
         <p>Published on: {{post.date.strftime('%Y-%m-%d')}}</p>
         <a href="{{url_for('blog_posts.blog_post',blog_post_id=post.id)}}" class="btn btn-primary">Read Blog</a>
       </div>
