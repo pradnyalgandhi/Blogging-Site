@@ -4,12 +4,12 @@ from myproject import db
 from myproject import login_manager
 from datetime import datetime
 
+
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(user_id)
 
-
-
+#CREATING THE USER MODEL
 class User(db.Model,UserMixin):
 
     __tablename__ = 'users'
@@ -33,7 +33,7 @@ class User(db.Model,UserMixin):
     def __repr__(self):
         return f"Username {self.username}"
 
-
+#CREATING THE BLOGPOST MODEL 
 class BlogPost(db.Model):
 
     users = db.relationship(User)

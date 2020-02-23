@@ -3,6 +3,7 @@ from myproject.modules import BlogPost
 
 core = Blueprint('core', __name__)
 
+# CREATING VIEWS FOR THE HOME PAGE  
 @core.route('/')
 def index():
     page = request.args.get('page',1,type=int)

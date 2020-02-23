@@ -7,8 +7,7 @@ from myproject.blog_posts.forms import BLogPostForm
 blog_posts = Blueprint('blog_posts',__name__)
 
 
-#Create
-
+#CREATE METHOD
 @blog_posts.route('/create',methods=['GET','POST'])
 @login_required
 def create_post():
@@ -28,7 +27,7 @@ def create_post():
 
     return render_template('create_post.html',form =form)
 
-#View
+#VIEW BLOG METHOD 
 @blog_posts.route('/<int:blog_post_id>')
 def blog_post(blog_post_id):
     blog_post = BlogPost.query.get_or_404(blog_post_id)
@@ -36,7 +35,7 @@ def blog_post(blog_post_id):
                             date = blog_post.date,post = blog_post)
 
 
-#Update
+#UPDATE BLOG METHOD
 @blog_posts.route('/<int:blog_post_id>/update', methods=['GET','POST'])
 @login_required
 def update(blog_post_id):
@@ -65,7 +64,7 @@ def update(blog_post_id):
     return render_template('create_post.html', title = 'Updating', form=form )
 
 
-#Delete
+#DELETE BLOG METHOD
 @blog_posts.route('/<int:blog_post_id>/delete',methods=['POST'])
 @login_required
 def delete_post(blog_post_id):

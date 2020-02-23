@@ -4,14 +4,14 @@
 
 <div class="jumbotron jumbotron-fluid" style="text-align:center;background-image:url('https://images.unsplash.com/photo-1510519138101-570d1dca3d66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1331&q=80');background-size:cover; background-position: center center; height:500px" >
   <h1 style="color: #BFBD9F; ">Welcome to the Blogging Site</h1><br>
-
-
 </div>
 
 
+# Display the blogs
 <div class="container">
 
   {% for post in blog_posts.items %}
+
     <div class="card">
       <h5 class="card-header">Recent</h5>
       <div class="card-body">
@@ -20,35 +20,36 @@
         <p>Published on: {{post.date.strftime('%Y-%m-%d')}}</p>
         <a href="{{url_for('blog_posts.blog_post',blog_post_id=post.id)}}" class="btn btn-primary">Read Blog</a>
       </div>
-
-
     </div>
-    {% endfor %}
 
+  {% endfor %}
+
+
+# Pagination Bar at the bottom
 </div>
 <nav aria-label= 'Page Navigation example'>
   <ul class="pagination justify-content-center">
+
     {% for page_num in blog_posts.iter_pages(left_edge = 1, right_edge=1, left_current=1, right_current=2)%}
+
       {% if blog_posts.page == page_num %}
         <li class="page-item disabled">
           <a class="page-link" href="{{url_for('core.index', page=page_num)}}">{{page_num}}</a>
         </li>
-
       {% else %}
       <li class="page-item ">
         <a class="page-link" href="{{url_for('core.index', page=page_num)}}">{{page_num}}</a>
       </li>
-
       {% endif %}
-
     {% endfor %}
 
   </ul>
 
 </nav>
+
+#Footer
 <footer class="footer" style="text-align:center; background-color:#141B1A; height:50px;">
   <p style="color: white; padding-top:10px; ">Produced by Pradnyal Gandhi</p>
-
 </footer>
 
 {% endblock %}

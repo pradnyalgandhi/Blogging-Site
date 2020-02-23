@@ -10,7 +10,7 @@ users = Blueprint('users',__name__)
 
 
 
-# register
+#REGISTER USER
 @users.route('/register',methods=['GET','POST'])
 def register():
     form = RegistrationForm()
@@ -29,7 +29,7 @@ def register():
 
 
 
-# login
+#LOGIN USER
 @users.route('/login',methods=['GET','POST'])
 def login():
 
@@ -53,14 +53,14 @@ def login():
     return render_template('login.html',form=form)
 
 
-# logout
+#LOGOUT USER
 @users.route("/logout")
 def logout():
     logout_user()
     return redirect(url_for("core.index"))
 
 
-# account (update UserForm)
+#UPDATE ACCOUNT FORM
 @users.route("/account", methods=['GET', 'POST'])
 @login_required
 def account():
@@ -87,6 +87,7 @@ def account():
     profile_image = url_for('static', filename='profile_pics/' + current_user.profile_image)
     return render_template('account.html', profile_image=profile_image, form=form)
 
+#USER BLOGS VIEW
 @users.route("/<username>")
 def user_posts(username):
     page = request.args.get('page',1,type=int)
