@@ -39,7 +39,7 @@ pip install -r requirements.txt
 6. Initiate the database using the following commands
 ```bash
 flask db init
-flask db migrate -m /*Comment*/
+flask db migrate -m
 flask db upgrade
 ```
 
