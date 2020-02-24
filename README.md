@@ -34,9 +34,16 @@ activate my env
 pip install -r requirements.txt
 ```
 
-5. After cloning the repository delete the __pycache__ and migrations folder
+5. After cloning the repository delete the __pycache__ and __migrations__ folder
 
-6. cd to your app.py file and run it in the Command Prompt using the following command
+6. Initiate the database using the following commands
+```bash
+flask db init
+flask db migrate -m /*Comment*/
+flask db upgrade
+```
+
+7. cd to your app.py file and run it in the Command Prompt using the following command
 ```bash
 python app.py
 ```
